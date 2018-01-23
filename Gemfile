@@ -11,7 +11,8 @@ gem "dm-postgres-adapter"
 gem "sinatra"
 gem "rack"
 
-group :test do |variable|
+group :test do 
   gem "rspec"
   gem "capybara"
+  gem 'database_cleaner'
 end

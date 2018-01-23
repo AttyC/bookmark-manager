@@ -5,6 +5,10 @@ class Bookmarks < Sinatra::Base
 
   enable :sessions
 
+  get '/' do
+    redirect '/links'
+  end
+
   get '/links' do
     @links = Link.all
     p @links
