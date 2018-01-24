@@ -2,7 +2,11 @@ ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require_relative 'models/link'
+
 require_relative "run_app"
+
+require_relative 'models/tag'
+
 
 class Bookmarks < Sinatra::Base
 
