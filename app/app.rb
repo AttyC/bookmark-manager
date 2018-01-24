@@ -23,7 +23,10 @@ class Bookmarks < Sinatra::Base
   end
 
   get '/tags/bubbles' do
-    @bubbles = Tag.all(:name = 'bubble')
+    @bubbles = Tag.all(:name => "bubbles")
+    @store = []
+    @bubbles.each {|tag| @store << tag.links}
+    @store.flatten!
     erb :filter_tag
   end
 

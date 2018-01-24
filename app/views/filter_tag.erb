@@ -1,1 +1,6 @@
-<%= @bubbles.first.url %>
+
+<ul>
+  <% @store.each{|link|%>
+    <li> Title: <%= link.title %> &nbsp;&nbsp;&nbsp;   Url: <%= link.url %> </li>
+  <% } %>
+</ul>
