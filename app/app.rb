@@ -15,7 +15,6 @@ class Bookmarks < Sinatra::Base
 
   get '/links' do
     @links = Link.all
-    p @links
     erb :link
   end
 
@@ -29,6 +28,4 @@ class Bookmarks < Sinatra::Base
     LinkTag.create(:link => link, :tag => tag)
     redirect '/links/new'
   end
-
-  run! if app_file == $0
 end

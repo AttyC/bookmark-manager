@@ -4,9 +4,9 @@ feature 'add tag to link' do
     visit "/links/new"
     fill_in "title", with: "bing"
     fill_in "url", with: "www.bing.com"
-    fill_in "tag_name", with: "new tag"
+    fill_in "tag_name", with: "education"
     click_button "Save bookmark"
-    click_button "Visit bookmarks"
-    expect(page).to have_content "new tag"
+    link = Link.first
+    expect(link.tags.map(&:name)).to include('education')
   end
 end
