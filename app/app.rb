@@ -22,6 +22,11 @@ class Bookmarks < Sinatra::Base
     erb :new
   end
 
+  get '/tags/bubbles' do
+    @bubbles = Tag.all(:name = 'bubble')
+    erb :filter_tag
+  end
+
   post '/links' do
     link = Link.create(title: params["title"], url: params["url"])
     tag = Tag.create(name: params["tag_name"])
