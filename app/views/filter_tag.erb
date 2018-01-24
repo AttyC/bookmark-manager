@@ -1,6 +1,6 @@
 
 <ul>
-  <% @store.each{|link|%>
-    <li> Title: <%= link.title %> &nbsp;&nbsp;&nbsp;   Url: <%= link.url %> </li>
+  <% @filtered_links.each{|link|%>
+    <li> Title: <%= link.title %> Url: <%= link.url %> </li>
   <% } %>
 </ul>

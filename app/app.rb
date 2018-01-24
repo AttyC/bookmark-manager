@@ -22,11 +22,8 @@ class Bookmarks < Sinatra::Base
     erb :new
   end
 
-  get '/tags/bubbles' do
-    @bubbles = Tag.first(:name => "bubbles")
-    @store = []
-    @bubbles.each {|tag| @store << tag.links}
-    @store.flatten!
+  get '/tags/:name' do
+    @filtered_links = Tag.first(:name => params[:name]).links
     erb :filter_tag
   end
 
