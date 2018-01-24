@@ -23,7 +23,7 @@ class Bookmarks < Sinatra::Base
   end
 
   get '/tags/bubbles' do
-    @bubbles = Tag.all(:name => "bubbles")
+    @bubbles = Tag.first(:name => "bubbles")
     @store = []
     @bubbles.each {|tag| @store << tag.links}
     @store.flatten!
