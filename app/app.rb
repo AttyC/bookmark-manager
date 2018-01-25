@@ -18,8 +18,8 @@ class Bookmarks < Sinatra::Base
     erb :link
   end
 
-  get '/links/new' do
-    erb :new
+  get '/links/form' do
+    erb :form
   end
 
   get '/tags/:name' do
@@ -30,8 +30,10 @@ class Bookmarks < Sinatra::Base
 
   post '/links' do
     link = Link.create(title: params["title"], url: params["url"])
-    tag = Tag.create(name: params["tag_name"])
-    LinkTag.create(:link => link, :tag => tag)
-    redirect '/links/new'
+    tag1 = Tag.create(name: params["tag_name1"])
+    # tag2 = Tag.create(name: params["tag_name2"])
+    LinkTag.create(:link => link, :tag => tag1)
+    # LinkTag.create(:link => link, :tag => tag2)
+    redirect '/links/form'
   end
 end

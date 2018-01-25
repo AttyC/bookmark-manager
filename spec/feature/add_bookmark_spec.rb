@@ -1,6 +1,6 @@
 feature 'Add bookmark' do
   scenario 'add one bookmark' do
-    visit "/links/new"
+    visit "/links/form"
     fill_in "title", with: "yahoo"
     fill_in "url", with: "www.yahoo.com"
     click_button "Save bookmark"
